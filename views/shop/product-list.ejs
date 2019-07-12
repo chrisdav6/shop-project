@@ -17,7 +17,9 @@
             <li class="list-group-item"><b>Price: $<%= product.price %></b></li>
           </ul>
           <div class="card-body">
-            <form action="/add-to-cart" method="POST">
+            <a href="/products/<%= product.id %>" class="btn btn-primary mr-2"><i class="fas fa-info-circle"></i>
+              Details</a>
+            <form action="/add-to-cart" class="d-inline-block" method="POST">
               <button class="btn btn-success"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
             </form>
           </div>
