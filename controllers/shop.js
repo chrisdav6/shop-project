@@ -26,7 +26,7 @@ exports.getProduct = (req, res, next) => {
     res.render('shop/product-details', {
       product: product,
       title: `Shop - Product - ${product.title}`,
-      path: '/products/<%= product.id %>'
+      path: '/products'
     });
   });
 }
@@ -36,6 +36,11 @@ exports.getCart = (req, res, next) => {
     title: 'Shop - Cart',
     path: '/cart'
   });
+};
+
+exports.postCart = (req, res, next) => {
+  const productId = req.params.productId;
+  res.redirect('/cart');
 };
 
 exports.getCheckout = (req, res, next) => {
