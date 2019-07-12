@@ -22,11 +22,11 @@ exports.getProducts = (req, res, next) => {
 }
 
 exports.getProduct = (req, res, next) => {
-  const productId = req.params.productId;
-  Product.findById(productId, product => {
+  const prodId = req.params.productId;
+  Product.findById(prodId, product => {
     res.render('shop/product-details', {
       product: product,
-      title: `Shop - Product - ${product.title}`,
+      title: `Shop - Product`,
       path: '/products'
     });
   });
@@ -40,9 +40,9 @@ exports.getCart = (req, res, next) => {
 };
 
 exports.postCart = (req, res, next) => {
-  const productId = req.params.productId;
-  Product.findById(productId, product => {
-    Cart.addProduct(productId, product.price);
+  const prodId = req.params.productId;
+  Product.findById(prodId, product => {
+    Cart.addProduct(prodId, product.price);
   });
   res.redirect('/cart');
 };
