@@ -1,14 +1,14 @@
 <%- include('../partials/header') %>
 <div class="container">
   <main>
-    <h1><%= product.title %></h1>
+    <h1 class="text-center text-md-left"><%= product.title %></h1>
     <hr>
     <div class="row mt-5">
       <div class="col-md-4">
-        <img src="<%= product.imageUrl %>" class="img-fluid" alt="<%= product.title %>">
+        <img src="<%= product.imageUrl %>" class="img-fluid mb-4 mb-md-0" alt="<%= product.title %>">
       </div>
       <div class="col-md-8">
-        <p class="lead"><%= product.description %></p>
+        <p class="lead text-center text-md-left"><%= product.description %></p>
         <div class="d-flex justify-content-between align-items-center mt-5">
           <h4 class="mb-0"><b>Price: $<%= product.price %></b></h4>
           <form action="/add-to-cart" class="d-inline-block" method="POST">
@@ -17,6 +17,10 @@
         </div>
       </div>
     </div><!-- /row -->
+    <div class="my-5">
+      <hr>
+      <a class="text-success" href="/products">Back to Products</a>
+    </div>
   </main>
 </div>
 <%- include('../partials/footer') %>
