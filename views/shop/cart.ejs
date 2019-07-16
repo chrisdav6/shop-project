@@ -3,6 +3,21 @@
   <main>
     <h1>Cart</h1>
     <hr>
+    <% if(products.length > 0) { %>
+    <ul class="list-group">
+      <% products.forEach((product) => { %>
+      <li class="list-group-item d-flex align-items-center justify-content-between"><%= product.productData.title %>
+        (<%= product.qty %>)
+        <form action="/cart-delete-item" method="POST">
+          <input type="hidden" name="productId" value="<%= product.productData.id %>">
+          <button class="btn btn-danger btn-sm">Delete</button>
+        </form>
+      </li>
+      <% }); %>
+    </ul>
+    <% } else { %>
+    <p>No Products in Cart!</p>
+    <% } %>
   </main>
 </div>
 <%- include('../partials/footer') %>
