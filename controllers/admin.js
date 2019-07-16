@@ -23,3 +23,14 @@ exports.postAddProduct = (req, res, next) => {
   product.save();
   res.redirect('/products');
 }
+
+exports.getEditProduct = (req, res, next) => {
+  const prodId = req.params.productId;
+  Product.findById(prodId, product => {
+    res.render('admin/edit-product', {
+      product: product,
+      title: `Shop - Edit Product`,
+      path: ''
+    });
+  });
+}
