@@ -4,6 +4,7 @@
     <h1>Edit Product</h1>
     <hr>
     <form class="mt-5 editProductForm" action="/admin/edit-product" method="POST">
+      <input type="hidden" name="productId" value="<%= product.id %>">
       <div class="form-group">
         <label for="title">Title</label>
         <input class="form-control form-control-lg" type="text" name="title" id="title" value="<%= product.title %>">
