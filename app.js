@@ -23,7 +23,7 @@ app.set('view engine', 'ejs');
 
 //Use default User
 app.use((req, res, next) => {
-  User.findById('5d2f6491bb60a805dc542bbe')
+  User.findById('5d2f6f0881b7f62eb4783e6e')
     .then(user => {
       req.user = user;
       next();
