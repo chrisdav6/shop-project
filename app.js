@@ -21,16 +21,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Use EJS Templating Engine
 app.set('view engine', 'ejs');
 
-//Routes
-app.use('/', shopRoutes);
-app.use('/admin', adminRoutes);
-
-//Serve 404 page
-app.use(errorController.get404Page);
-
 //Use default User
 app.use((req, res, next) => {
-  User.findById('5d2f4863c3511c4a985d40ef')
+  User.findById('5d2f6491bb60a805dc542bbe')
     .then(user => {
       req.user = user;
       next();
@@ -38,6 +31,13 @@ app.use((req, res, next) => {
       console.log(err);
     });
 });
+
+//Routes
+app.use('/', shopRoutes);
+app.use('/admin', adminRoutes);
+
+//Serve 404 page
+app.use(errorController.get404Page);
 
 //Connect to DB
 const dbLocalUrl = 'mongodb://localhost:27017/myShop';
