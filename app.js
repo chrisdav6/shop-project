@@ -7,6 +7,10 @@ const shopRoutes = require('./routes/shop');
 const adminRoutes = require('./routes/admin');
 const errorController = require('./controllers/error');
 
+//Seed DB
+// const seedDb = require('./seedDb');
+// seedDb();
+
 //BodyParser
 app.use(express.urlencoded({ extended: true }));
 
