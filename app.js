@@ -3,10 +3,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const port = process.env.PORT || 3000;
-const shopRoutes = require('./routes/shop');
-const adminRoutes = require('./routes/admin');
 const errorController = require('./controllers/error');
 const User = require('./models/user');
+const shopRoutes = require('./routes/shop');
+const adminRoutes = require('./routes/admin');
 
 //Seed DB
 // const seedDb = require('./seedDb');
