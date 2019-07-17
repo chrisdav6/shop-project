@@ -24,8 +24,10 @@ app.use('/admin', adminRoutes);
 app.use(errorController.get404Page);
 
 //Connect to DB
-const dbUrl = 'mongodb://localhost:27017/myShop';
-mongoose.connect(dbUrl, { useNewUrlParser: true })
+const dbLocalUrl = 'mongodb://localhost:27017/myShop';
+const dbMlabUrl = 'mongodb://chris:chris1234@ds251877.mlab.com:51877/myshop'
+
+mongoose.connect(dbMlabUrl, { useNewUrlParser: true })
   .then(result => {
     console.log('Connected to DB');
     //Start Server
